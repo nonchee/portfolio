@@ -1,280 +1,494 @@
 <!DOCTYPE html>
-<html>
-    
-    
+<html class="no-skrollr">
 <head>
+	<meta charset="utf-8">
 
-    <!-- InstanceBeginEditable name="doctitle" -->
-    <title> nancy what do </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+ <link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+	<title> nancy what do</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<style type="text/css">
+        
+ 
+        
+	* {
+		padding:0;
+		margin:0;
+	}
+	html, body {
+		height:100%;
     
     
-    
-    <!-- InstanceEndEditable -->
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-     
-    <!--bootstrap things--> 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-<link href='http://fonts.googleapis.com/css?family=Molengo' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="style.css">
-  
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-  
-    </head>
+        
+	}
+        
+
+	.skrollr-desktop body {
+		height:100% !important;
+	}
+	body {
+		font-family:'Quicksand';
+	}
+	p {
+		margin:1em 0;
+	}
+	.parallax-image-wrapper {
+		position:fixed;
+		left:0;
+		width:100%;
+		overflow:hidden;
+	}
+	.parallax-image-wrapper-50 {
+		height:50%;
+		top:-50%;
+	}
+	.parallax-image-wrapper-100 {
+		height:100%;
+		top:-100%;
+	}
+	.parallax-image {
+		display:none;
+		position:absolute;
+		bottom:0;
+		left:0;
+		width:100%;
+		background-repeat:no-repeat;
+		background-position:center;
+		background-size:cover;
+	}
+	.parallax-image-50 {
+		height:200%;
+		top:-50%;
+	}
+	.parallax-image-100 {
+		height:100%;
+		top:0;
+	}
+	.parallax-image.skrollable-between {
+		display:block;
+	}
+	.no-skrollr .parallax-image-wrapper {
+		display:none !important;
+	}
+	#skrollr-body {
+		height:100%;
+		overflow:visible;
+		position:relative;
+	}
+	.content-bar{
+    height: 1%;
+    }
+        .gap {
+		background:transparent center no-repeat;
+		background-size:cover;
+	}
+	.skrollr .gap {
+		background:transparent !important;
+	}
+	.gap-50 {
+		height:50%;
+	}
+	.gap-100 {
+		height:100%;
+	}
+        
+    .gap-500 {
+		height:300%;
+	}
+	.header, .content {
+		background:#fff;
+		padding:1em;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+	.content-full {
+		height:100%;
+	}
+	#done {
+		height:100%;
+	}
+        
+        
+    /*formatting the nav a bit*/
+    ul {
+        list-style: none; 
+        
+    }
+        
+     ul li {
+         display: inline-block;
+         margin-left: 2%; 
+        transition: opacity 300ms; 
+         
+            
+    }
+        
+    ul li:hover {
+        opacity: 0.8;
+            
+    }
+        
+   
+        
+    a {
+        text-decoration:none;
+        transition: color 300ms; 
+            
+    }
+        
+    a:hover {
+        text-decoration:none;
+            
+    }
+        
+        /*formatting headers and things*/
+        
+    .subheader{ 
+        font-size: 1.67em; 
+    }
+	</style>
+</head>
 
 <body>
-    
-     <div id = "header"> 
-        nancy what do 
-    
-    </br>
-    
-    <h4> Hi, I'm a student at the University of Pennsylvania. This is what I've been up to. </h4>
-    </div> 
-   
+	<!--
+		We position the images fixed and therefore need to place them outside of #skrollr-body.
+		We will then use data-anchor-target to display the correct image matching the current section (.gap element).
+	-->
 
-   <!--
-    <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>  <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-     <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-     <li data-target="#carousel-example-generic" data-slide-to="5"></li>
-     <li data-target="#carousel-example-generic" data-slide-to="6"></li>
-     
-      </ol>-->
-    
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
- 
+	<div
+		class="parallax-image-wrapper parallax-image-wrapper-100"
+		data-anchor-target="#dragons + .gap"
+		data-bottom-top="transform:translate3d(0px, 200%, 0px)"
+		data-top-bottom="transform:translate3d(0px, 0%, 0px)">
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <div id="troll">
-        <img src="res/Poster1-icesculptor.png">
-        <img src="res/hardwarepost.png">
-          <img src="res/ResultsOut.png">
-          <img src="res/dancing-sticker.jpg">
-        </div>
-      <div class="carousel-caption">
-          <div id="pictitle">PennApps 2015 </div></br>
-        PennApps is a semesterly hackathon hosted at Penn. I created Pennjamin, the PennApps mascot, who ended up on all our social media releases and even got his own Facebook profile page.  
-        <br><br>
-        <div id="toc"> #stuffaroundcampus </div>
-      </div>
-    </div>
-    <div class="item">
-        <div id="troll">
-             <img src="res/iFair%20Facebook%20Cover.jpg">
-        <img src="res/iFair%202015.jpg">
-           
-           
+		<div
+			class="parallax-image parallax-image-100"
+			style="background-image:url(res/header.png)"
+			data-anchor-target="#dragons + .gap"
+			data-bottom-top="transform: translate3d(0px, -80%, 0px);"
+			data-top-bottom="transform: translate3d(0px, 80%, 0px);"
+		>
         
-        </div>
-      <div class="carousel-caption">
         
-             <div id="pictitle"> Phi Gamma Nu IFair 2015 </div><br>
-            Made a flyer for my business frat's signature student-run internship fair. I tried to make the design stand out in a crowd of papers when it was hung up in hallways around campus. <br>
-          <br>
-        <div id="toc"> #stuffaroundcampus</div>
-         
-      </div></div>
-    
-    
-        <div class="item">
-        <div id="troll">
-        <img src="res/taiwanskyping3-2.png">
-        <img src="res/taiwanskyping2.png">
-        <img src="res/taiwanskyping3.png">
-        
-        </div>
-      <div class="carousel-caption">
-        
-            <div id="pictitle">ITASA East Coast Conference 2015 </div><br>
-            My marketing team leader was wonderful while planning for ITASA's annual conference. These are iteractions of my t-shirt design featuring a tech-savvy Taipei messaging Philadelphia. We also designed social media releases, helped run our IndieGogo Campaign, and scripted our <a href="www.youtube.com/watch?v=08hBBRg3TDw"> promo video</a>.
             
-                 <br><br>
-        <div id="toc"> #stuffaroundcampus</div>
+            
+        
+        </div>
+        
+        
+		<!--the +/-80% translation can be adjusted to control the speed difference of the image-->
+	</div>
+
+	<div
+		class="parallax-image-wrapper parallax-image-wrapper-100"
+		data-anchor-target="#bacons + .gap"
+		data-bottom-top="transform:translate3d(0px, 200%, 0px)"
+		data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+
+		<div
+			class="parallax-image parallax-image-100"
+			style="background-image:url(res/pennappsheader.png)"
+			data-anchor-target="#bacons + .gap"
+			data-bottom-top="transform: translate3d(0px, -80%, 0px);"
+			data-top-bottom="transform: translate3d(0px, 80%, 0px);"
+		></div>
+	</div>
+
+	<div
+		class="parallax-image-wrapper parallax-image-wrapper-50"
+		data-anchor-target="#kittens + .gap"
+		data-bottom-top="transform:translate3d(0px, 300%, 0px)"
+		data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+
+		<div
+			class="parallax-image parallax-image-50"
+			style="background-image:url(res/animationsheader.png)"
+			data-anchor-target="#kittens + .gap"
+			data-bottom-top="transform: translate3d(0px, -60%, 0px);"
+			data-top-bottom="transform: translate3d(0px, 60%, 0px);"
+		></div>
+	</div>
+    
+    	<div
+		class="parallax-image-wrapper parallax-image-wrapper-50"
+		data-anchor-target="#pgn + .gap"
+		data-bottom-top="transform:translate3d(0px, 300%, 0px)"
+		data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+
+		<div
+			class="parallax-image parallax-image-50"
+			style="background-image:url(res/itasaheader.png)"
+			data-anchor-target="#pgn + .gap"
+			data-bottom-top="transform: translate3d(0px, -60%, 0px);"
+			data-top-bottom="transform: translate3d(0px, 60%, 0px);"
+		></div>
+	</div>
+    
+    
+    
+     <div
+		class="parallax-image-wrapper parallax-image-wrapper-50"
+		data-anchor-target="#animations + .gap"
+		data-bottom-top="transform:translate3d(0px, 300%, 0px)"
+		data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+
+		<div
+			class="parallax-image parallax-image-50"
+			style="background-image:url(res/pgnheader.png)"
+			data-anchor-target="#animations + .gap"
+			data-bottom-top="transform: translate3d(0px, -60%, 0px);"
+			data-top-bottom="transform: translate3d(0px, 60%, 0px);"
+		></div>
+	</div>
+    
+    
+    <div
+		class="parallax-image-wrapper parallax-image-wrapper-50"
+		data-anchor-target="#games + .gap"
+		data-bottom-top="transform:translate3d(0px, 300%, 0px)"
+		data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+
+		<div
+			class="parallax-image parallax-image-50"
+			style="background-image:url(res/gamesheader.png)"
+			data-anchor-target="#games + .gap"
+			data-bottom-top="transform: translate3d(0px, -60%, 0px);"
+			data-top-bottom="transform: translate3d(0px, 60%, 0px);"
+		></div>
+	</div>
+    
+    
+        <div
+		class="parallax-image-wrapper parallax-image-wrapper-50"
+		data-anchor-target="#traditional + .gap"
+		data-bottom-top="transform:translate3d(0px, 300%, 0px)"
+		data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+
+		<div
+			class="parallax-image parallax-image-50"
+			style="background-image:url(res/traditionalheader.png)"
+			data-anchor-target="#traditional + .gap"
+			data-bottom-top="transform: translate3d(0px, -60%, 0px);"
+			data-top-bottom="transform: translate3d(0px, 60%, 0px);"
+		></div>
+	</div>
+    
+    
+    
+
+	<div id="skrollr-body">
+		<div class="content content-bar" id="dragons">
+			<!--nancy what do
+            
+            <ul>
+            
+            <li> Drawing I </li>
+            <li> PennApps 2015s</li>
+            <li> Animation</li>
+            <li> Phi Gamma Nu </li>
+            <li> Games</li>
+            <li> Traditional</li>
+            
+            </ul> -->
+            <img height="1000px" src="res/sitetitle.png">
+		</div>
+		
+        
+        <!--intro to nancy-->
+        <div class="gap gap-100" style="background-image:url(images/kitteh1.jpg);"></div>
+		
+        
+        <div class="content" id="bacons">
+			<div class="container">
+                
+                
             </div>
-         
-      </div>
+          	
+        
+		</div>
+        
+        
+        
+		<div class="gap gap-100" style="background-image:url(images/kitteh2.jpg);"></div>
+		
+        
+        <div class="content content-full" id="kittens">
 
-       <div class="item">
-        <div id="troll">
-            <div id="placeholder">      </div>
-       
-           <img id="wio" src="res/wio2.png">  
-           <div id="placeholder">  </div>
-        </div>
-      <div class="carousel-caption">
-        
-             <div id="pictitle"> Renewal College Fellowship </div><br>
-            I've found a lot of friendship in Penn's Christian community, and joined a small group that calls itself team Whole in One. I Illustrator'd up this design with everyone's names in the center ring for a t-shirt and shared it with the group. <br>
-          <br>
-        <div id="toc"> #stuffaroundcampus</div>
-         
-      </div></div>
-    
-     
-    <div class="item">
-        <div id="troll">
-            <img src="res/cranes.JPG">
-        <img src="res/15yrpg1.JPG">
-        </div>
-      <div class="carousel-caption">
-        
-             <div id="pictitle"> Pan-Asian American Community House </div><br>
-              <br>
-          
-          A lot of times I like to hang around PAACH because it has nice couches and nice people and lots of tea, but once I got pulled into helping out with designing the anniversary brochure. 
-          <br>
-          
-        <div id="toc"> #stuffaroundcampus</div>
-         
-      </div></div>
-     
-<div class="item">
-      <div id="troll">
-        <img src="res/Banner1.jpg">
-    
-        </div>
-      <div class="carousel-caption">
-          <div id="pictitle">PennApps 2015 (Bonus!)</div></br>
-      The gigantic 7-foot poster to be hung outside during PennApps, featuring Ruby the photobombing whale. 
-        <br><br>
-        <div id="toc"> #stuffaroundcampus </div>
-      </div>
-    </div>
-           
-        
-   
-    
-     <div class="item">
-        <div id="troll">
-            <img src="res/2014-10-21%2016.11.47.jpg">
-        <img src="res/2014-11-06%2015.15.45.jpg">
-          <img src="res/2014-12-02%2016.11.07.jpg"> 
-              <img src="res/2014-12-17%2015.07.12.jpg"> 
-           
-           
-      <div class="carousel-caption">
-        
-             <div id="pictitle"> FNAR 123: Drawing I </div><br>
-            Excerpts from my physical portfolio of traditional art things. I always had to dress like a burglar on art class days because staying clean == futility. <br>
-          <br>
-        <div id="toc"> #traditional</div>
-         
-      </div></div>
-    </div>
-    
-       
-     <div class="item">
-        <div id="troll">
-             <div id="placeholder">      </div>
-            <img src="res/my%20nameee.gif">
-        
-        </div>
-      <div class="carousel-caption">
-        
-             <div id="pictitle"> WIP: Animations </div><br>
-           Keeping a brave heart while teaching myself Adobe Flash. <br>
-          <br>
-        <div id="toc"> #longggwaytogo</div>
-         
-      </div></div>
-    
-    
-   
-    
-    
-        <div class="item">
-        <div id="troll">
             
-            <img src="res/game10-1.jpg">
-            <img src="res/game10-2.jpg">
-            <img src="res/game10-3.jpg">
+            <div class="container">
+                
+            <div class="row description">
+                <p>Meet Pennjamin, the PennApps Penguin. I made Pennjamin during a thirty-day free trial of Adobe Illustrator, and everyone on the PennApps design team got so carried away branding everything with penguins that he ended up with his own <a href="#">Facebook page</a>. </p>
+                <p>Pennjamin probably went through four or five iterations of various roundness, eye size, and beak style. Developing him was a lot fun as I paid attention to critique from older designers on the team. Towards the end though, they mostly just started going "it's so cuuuuuute". </p>
+            
+            
+            </div>
+            
+            <p class="subheader"> Social Media Posts</p>
+            <div class="row">
+                <img height="300px" src="res/hardwarepost.png">
+                <img height="300px" src="res/AppsOpenned.png">
+                <img height="300px" src="res/ResultsOut.png">
+               
+            </div>
+            
+            <p class="subheader"> Posters</p>
+            <div class="row">
+                <img height="300px" src="res/Poster1-icesculptor.png">
+                <img height="300px" src="res/Poster1-midnightatpennapps.png">
+                <img height="300px" src="res/Poster1-cperlrubysql.png">
+                <img height="300px" src="res/Poster1-pythonscalacsharp.png">
+                <img height="300px" src="res/Poster1-ocaml.png">
+                
+            </div>
+            
+            
+            
+         <!--   <div class="row">
+                
+                <div class="col-sm-6">
+                            <p class="subheader"> Laptop Stickers </p>
+                
+                <img height="300px" src="res/dancing-sticker.jpg">
+                </div>
+               
            
+            
+            
+            
+            <div class="col-sm-6">
+                <p class="subheader"> Adoring Fans </p>
+                <img height="300px" src="res/pennguins.jpg">
+               
+            </div>
+            </div>
+                
+            <div class="row">
+                <p class="subheader"> Welcome Banner (ft. Ruby the Photobombing Whale) </p>
+                <img height="300px" src="res/Banner1.png">
+                
+                </div> -->
+                
+            </div>
         </div>
-      <div class="carousel-caption">
-        
-             <div id="pictitle"> WIP: Game 10 </div><br>
-           Made ScrabbleTetris, complete with random compliment generator when you successfully spell a valid four-letter word. Could be expanded to help generate random words to inspire creative writing or to help learn vocabulary in new languages.<br>
-          <br>
-        <div id="toc"> #gamedesign</div>
-         
-      </div></div>
+                
+       
+		
+          
     
-
-    
-      <div class="item">
-        <div id="troll">
-            <img src="res/lol1.jpg">
-        <img src="res/lol2.jpg">
-          <img src="res/shapebuilder%20and%20opacity%20and%20clipping%20practice.png">
-        
+		
+        <div class="gap gap-100" style="background-image:url(images/kitteh3.jpg);"></div>
+        <div class="content content-full" id="pgn">
+ <div class="container">
+            
+            <div class="row description"> Having a bit of fun with my friends' names teaching myself Adobe Flash. </div>
+            
+            <div class="col-xs-6">
+                <img height="300px" src="res/my%20nameee.gif">
+                <img height="300px" src="res/saurabh.gif">
+            </div>
+            </div> 
+            
+      
         </div>
-      <div class="carousel-caption">
-        
-             <div id="pictitle"> A few unfortunates </div><br>
-              <br>
-          
-          A memorial to my first few attempts at Illustrator, which still make me laugh. Included a space octopus (my first try at using Illustrator-y things like ShapeBuilder and Opacity Mask) for visual balance.
-          <br>
-          
-        <div id="toc"> #lol</div>
-         
-      </div></div>
     
     
-    
-    
-     </div>
+        <div class="gap gap-100" style="background-image:url(images/kitteh3.jpg);"></div>
+        <div class="content content-full" id="animations">
+            <div class="container">
+            <div class="row description">T-shirt designs for ITASA. </div>
+		 <img height="300px"  src="res/taiwanskyping2.png">
+         <img height="300px" src="res/taiwanskyping3.png">
+            <img height="300px" src="res/taiwanskyping3-2.png">
+            
+            
+        </div>
     </div>
+    
+      <div class="gap gap-100" style="background-image:url(images/kitteh3.jpg);"></div>
+        <div class="content content-full" id="games">
+			<div class="container">
+            <p> Phi Gamma Nu </p>
+            
+            <div class="row description"> A fraternity is like an amoeba, constantly trying to go endocytosis on the freshmen on campus. In order to help PGN stand out, I made posters that I knew would stand out in a crowded bulletin board and have been rebuilding our website with Bootstrap. </div>
+            
+            <div class="row">
+                <p class="subheader"> Signature Events Marketing Materials</p>
+                <img height="300px" src="res/iFair%202015.jpg">
+                <img height="300px" src="res/iFair%20Facebook%20Cover.jpg">
 
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+            </div>
+                
+            
+             <div class="row">
+                <p class="subheader"> Website </p>
+            
+                 <div class="col-sm-6"> Before
+              <img height="300px" src="res/prevpgn1.png">
+                 </div>
+                 
+                 <div class="col-sm-6">
+                 After</br>
+                (Screenshot to come!)
+</div>
+            </div>
+        </div>
+    
+    </div>
+    
+    
+    <div class="gap gap-100" style="background-image:url(images/kitteh3.jpg);"></div>
+        <div class="content content-full" id="traditional">
+			<div class="container"><p>  </p>
+            
+            <div class="row description"> Games are super painful to make, but also quite rewarding! </div>
+            
+            <div class="row">
+                <p class="subheader"> TetraSpell </p>
+                <p> A game of Tetris where blocks are only cleared after spelling out valid words. Build a vocab or use the game as a random word generator when you've got writer's block. </p>
+                <img height="300px" src="res/game10-1.jpg">
+                <img height="300px" src="res/game10-2.jpg">
+                <img height="300px" src="res/game10-3.jpg">
 
-      </div> 
+            </div>
+            
+             <div class="row">
+                <p class="subheader"> More to come! </p>
+                <p> Working on more artsy and ridiculous games with my composer friend Tabata. </p>
+
+            </div>
+                
+            </div> 
+        
+        </div>
+        
    
-
-<div id="footer" style="text-align:center;padding:20px; ">
-
-<h6>  <br>
-    ( hover over things to read more ) </h6></div>
-    
-
- 
- 
-    
-    
-    <!--my own js stuff-->
-    <script>
-    $(document).ready(function() {
-        $('.carousel').each(function(){
-        $(this).carousel({
-            interval: false
-        });
-    });
         
         
-        $('.gopop').popover(
-    });
-	
-    });
-    
-  
         
-    </script>
+		<div class="gap gap-50" style="background-image:url(images/kitteh3.jpg);"></div>
+		<div class="content" id="done">
+			 <div class="container"><div class="row description"> HAAANDS. </div>
+            
+            <div class="row">
+                <p class="subheader"> FNAR 123</p>
+                <img height="300px" src="res/2014-10-21%2016.11.47.jpg">
+                <img height="300px" src="res/2014-11-06%2015.15.45.jpg">
+                <img height="300px" src="res/2014-12-02%2016.11.07.jpg">
+                <img height="300px" src="res/2014-12-17%2015.07.12.jpg">
+
+            </div>
+		</div>
+	</div>
+</div>
+	<script type="text/javascript" src="skrollr.min.js"></script>
+	<script type="text/javascript">
+	skrollr.init({
+		smoothScrolling: false,
+		mobileDeceleration: 0.004
+	});
+	</script>
 </body>
-</html>
+
+</html
